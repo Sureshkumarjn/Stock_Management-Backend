@@ -1,9 +1,15 @@
+const dotenv = require("dotenv"); ;
+dotenv.config();
 const mongoose = require("mongoose");
 // const uri = "mongodb+srv://adminhamza:adminhamza123&@cluster0.pzcviot.mongodb.net/InventoryManagementApp?retryWrites=true&w=majority";
 // const uri = "mongodb://localhost:27017/InventoryManagement";
 
-const uri =
-  "mongodb+srv://iamsureshkumar2001:suresh2001@cluster0.cp0vnz3.mongodb.net/InventoryManagement?retryWrites=true&w=majority&appName=Cluster0";
+// const uri =
+//   "mongodb+srv://iamsureshkumar2001:suresh2001@cluster0.cp0vnz3.mongodb.net/InventoryManagement?retryWrites=true&w=majority&appName=Cluster0";
+
+  const uri = process.env.DB_URL;
+    
+
 
 mongodb: function main() {
   mongoose
