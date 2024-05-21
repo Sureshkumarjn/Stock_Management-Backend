@@ -6,6 +6,7 @@ const purchaseRoute = require("./router/purchase");
 const salesRoute = require("./router/sales");
 const materialRoute = require("./router/material");
 const employeeRoute =require("./router/employee")
+const staffRoute =require("./router/staff");
 const json2xls = require("json2xls");
 const cors = require("cors");
 const User = require("./models/users");
@@ -28,6 +29,9 @@ app.use("/api/material", materialRoute);
 
 //Employee API
 app.use("/api/employee", employeeRoute);
+
+//Staff API
+app.use("/api/staff", staffRoute);
 
 
 // Purchase API
