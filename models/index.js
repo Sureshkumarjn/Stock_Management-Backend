@@ -1,4 +1,4 @@
-const dotenv = require("dotenv"); ;
+const dotenv = require("dotenv");
 dotenv.config();
 const mongoose = require("mongoose");
 // const uri = "mongodb+srv://adminhamza:adminhamza123&@cluster0.pzcviot.mongodb.net/InventoryManagementApp?retryWrites=true&w=majority";
