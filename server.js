@@ -16,10 +16,10 @@
 
 
 
-  const PORT = process.env.PORT;
+  // const PORT = process.env.PORT;
 
   const app = express();
-  // const PORT = 4000;
+  const PORT = 4000;
   main();
   app.use(express.json());
   app.use(cors());
