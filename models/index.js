@@ -1,25 +1,24 @@
-const dotenv = require("dotenv");
-dotenv.config();
 const mongoose = require("mongoose");
-// const uri = "mongodb+srv://adminhamza:adminhamza123&@cluster0.pzcviot.mongodb.net/InventoryManagementApp?retryWrites=true&w=majority";
-// const uri = "mongodb://localhost:27017/InventoryManagement";
+require("dotenv").config();
 
-// const uri =
-//   "mongodb+srv://iamsureshkumar2001:suresh2001@cluster0.cp0vnz3.mongodb.net/InventoryManagement?retryWrites=true&w=majority&appName=Cluster0";
+const uri = process.env.DB_URL;
 
-  const uri = process.env.DB_URL;
-    
+async function main() {
+  if (!uri) {
+    console.error("❌ Error: DB_URL is not defined in environment variables.");
+    process.exit(1); // Stop execution if DB_URL is missing
+  }
 
-
-mongodb: function main() {
-  mongoose
-    .connect(uri)
-    .then(() => {
-      console.log("Succesfull");
-    })
-    .catch((err) => {
-      console.log("Error: ", err);
+  try {
+    await mongoose.connect(uri, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
     });
+    console.log("✅ MongoDB Connected Successfully!");
+  } catch (err) {
+    console.error("❌ MongoDB Connection Error:", err);
+    process.exit(1); // Stop execution on connection failure
+  }
 }
 
 module.exports = { main };
