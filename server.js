@@ -10,7 +10,7 @@
   const json2xls = require("json2xls");
   const cors = require("cors");
   const User = require("./models/users");
-  const Product = require("./models/Product");
+  const Product = require("./models/product");
   const dotenv = require("dotenv");
   dotenv.config();
 
